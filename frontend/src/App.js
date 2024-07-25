@@ -9,8 +9,17 @@ import Home from './components/Home/Home';
 import News from './components/News/News';
 import AlgorithmTrading from './components/AlgorithmTrading/AlgorithmTrading';
 import LearnSpace from './components/LearnSpace/LearnSpace';
+import axios from 'axios'
 
 function App() {
+  axios.defaults.withCredentials = true
+const handleSubmit = (e) => {
+  e.preventDefault();
+  axios.post('https://gain-backend.vercel.app/register')
+  .then(result => console.log(result))
+  .catch(err => console.log(err))
+}
+  
   return (
     <>
       <NavbarComp />
