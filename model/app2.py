@@ -6,6 +6,7 @@ import os
 # Load the model
 try:
     model = joblib.load('investment_model.pkl')
+    print("Model loaded successfully")
 except KeyError as e:
     print(f"Error loading model: {e}")
 
