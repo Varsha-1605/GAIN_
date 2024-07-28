@@ -132,7 +132,7 @@ function Home() {
     onSubmit: async (values) => {
       try {
         const response = await axios.post(
-          "http://127.0.0.1:5002/predict/stock",
+          "https://gain-ffmw.onrender.com",
           {
             Age_Group: values.age,
             Risk_Level: values.risk,
