@@ -1,9 +1,13 @@
 from flask import Flask, request, jsonify
 import joblib
 import pandas as pd
+import os
 
 # Load the model
-model = joblib.load('investment_model.pkl')
+try:
+    model = joblib.load('investment_model.pkl')
+except KeyError as e:
+    print(f"Error loading model: {e}")
 
 from flask_cors import CORS  # Add this import
 app = Flask(__name__)
@@ -36,4 +40,5 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=5002)
+    port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True, host='0.0.0.0', port=port)
