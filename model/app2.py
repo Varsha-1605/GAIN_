@@ -5,10 +5,12 @@ import os
 
 # Load the model
 try:
+    print(f"Current working directory: {os.getcwd()}")
+    print(f"Files in current directory: {os.listdir()}")
     model = joblib.load('investment_model.pkl')
     print("Model loaded successfully")
-except KeyError as e:
-    print(f"Error loading model: {e}")
+except Exception as e:
+    print(f"Error loading model: {str(e)}")
 
 from flask_cors import CORS  # Add this import
 app = Flask(__name__)
