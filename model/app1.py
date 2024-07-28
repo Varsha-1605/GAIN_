@@ -10,7 +10,7 @@ import os
 from flask_cors import CORS
 
 np.seterr(invalid='ignore')  # Ignore invalid (NaN) values
-app = Flask(_name_)
+app = Flask(__name__)
 CORS(app)
 
 # Load and prepare the data
@@ -80,5 +80,6 @@ def predict():
     prediction = predict_stock_movement(company_name, latest_data, scaler, company_models, sequence_length)
     return jsonify({"company": company_name, "prediction": prediction})
 
-if _name_ == '_main_':
-    app.run(debug=True)
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
