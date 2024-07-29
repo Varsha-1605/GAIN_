@@ -7,6 +7,12 @@ const cors = require("cors");
 const { UserRoute } = require("./Constant");
 const connectToDatabase = require("./src/DB/Connect");
 
+// Add the new root route here
+app.get('/', (req, res) => {
+  res.send('Welcome to the API');
+});
+
+
 // Importing Routes
 const userRoutes = require("./src/routes/userRoutes");
 const userDataRoutes = require("./src/routes/userDataRoutes");
