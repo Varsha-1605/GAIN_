@@ -15,6 +15,8 @@ const adminRoutes = require("./src/routes/adminRoutes");
 const app = express();
 const port = process.env.PORT || 5001;
 
+console.log("App is starting...");
+
 app.use(cors(
   {
     origin: ["https://gain-pi.vercel.app/"],
