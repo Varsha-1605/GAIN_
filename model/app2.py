@@ -1,22 +1,16 @@
 from flask import Flask, request, jsonify
-import joblib
+import joblib 
 import pandas as pd
-import os
+
+
 
 # Load the model
-try:
-    print(f"Current working directory: {os.getcwd()}")
-    print(f"Files in current directory: {os.listdir()}")
-    model = joblib.load('investment_model.pkl')
-    print("Model loaded successfully")
-except Exception as e:
-    print(f"Error loading model: {str(e)}")
+model = joblib.load('investment_model.pkl')
 
 from flask_cors import CORS  # Add this import
 app = Flask(__name__)
 CORS(app)
-
-def get_investment_advice(model, user_inputs):
+def get_investment_advice(model, user_inputs):      
     user_data = pd.DataFrame([user_inputs])
 
     # Make prediction using the model
@@ -40,6 +34,7 @@ def predict():
     except Exception as e:
         print(f"Error: {e}")
         return jsonify({'error': 'An error occurred'}), 500
+
 
 
 if __name__ == '__main__':
