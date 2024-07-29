@@ -3,15 +3,8 @@ const session = require('express-session');
 const passport = require('./src/Auth/googleAuth');
 require('dotenv').config();
 const cors = require("cors");
-
 const { UserRoute } = require("./Constant");
 const connectToDatabase = require("./src/DB/Connect");
-
-// Add the new root route here
-app.get('/', (req, res) => {
-  res.send('Welcome to the API');
-});
-
 
 // Importing Routes
 const userRoutes = require("./src/routes/userRoutes");
@@ -34,6 +27,14 @@ app.use(express.json());
 app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+
+
+// Add the new root route here
+app.get('/', (req, res) => {
+  res.send('Welcome to the API');
+});
+
+
 
 // For User Routes
 app.use(UserRoute, userRoutes);
