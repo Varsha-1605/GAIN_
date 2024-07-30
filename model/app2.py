@@ -3,6 +3,9 @@ import joblib
 import pandas as pd
 from flask_cors import CORS
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Load the model
 try:

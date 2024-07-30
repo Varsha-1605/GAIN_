@@ -7,6 +7,10 @@ from tensorflow.keras.models import Sequential, load_model
 from tensorflow.keras.layers import LSTM, Dense
 from tensorflow.keras.optimizers import Adam
 import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 np.seterr(invalid='ignore')  # Ignore invalid (NaN) values
 from flask_cors import CORS  # Add this import

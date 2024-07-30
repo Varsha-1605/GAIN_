@@ -11,4 +11,4 @@ Jinja2==3.1.2    # Template engine used by Flask
 Werkzeug==2.3.6  # A WSGI utility library used by Flask
 itsdangerous==2.1.2  # Provides security-related helpers used by Flask
 requests==2.31.0  # HTTP library, often useful for making API calls
-
+python-dotenv==0.20.0
