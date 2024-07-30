@@ -146,6 +146,12 @@ def predict():
     
     prediction = predict_stock_movement(company_name, latest_data)
     return jsonify({"company": company_name, "prediction": prediction})
+
+
+@app.route("/")
+def home():
+    return "Hello Welcome to our Finance app GAIN"
+    
     
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
