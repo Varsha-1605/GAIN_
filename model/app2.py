@@ -8,7 +8,7 @@ import pandas as pd
 try:
     print(f"Current working directory: {os.getcwd()}")
     print(f"Files in current directory: {os.listdir()}")
-    model = joblib.load('investment_modelas.pkl')
+    model = joblib.load('investment_model.pkl')
     print("Model loaded successfully")
 except Exception as e:
     print(f"Error loading model: {str(e)}")
