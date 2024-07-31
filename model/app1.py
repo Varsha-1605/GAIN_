@@ -8,12 +8,13 @@ from tensorflow.keras.layers import LSTM, Dense
 from tensorflow.keras.optimizers import Adam
 import os
 from dotenv import load_dotenv
+from flask_cors import CORS  # Add this import
 
 # Load environment variables from .env file
 load_dotenv()
 
 np.seterr(invalid='ignore')  # Ignore invalid (NaN) values
-from flask_cors import CORS  # Add this import
+
 app = Flask(__name__)
 CORS(app)
 
@@ -151,10 +152,8 @@ def predict():
     prediction = predict_stock_movement(company_name, latest_data)
     return jsonify({"company": company_name, "prediction": prediction})
 
-@app.route("/")
-def home():
-    return "Welcome to our Finance App"
 
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 8080))  # Use PORT env variable or default to 8080
-    app.run(host='0.0.0.0', port=port, debug=False)
+    host = os.getenv('HOST', '0.0.0.0')
+    port = int(os.getenv('PORT', 5001))
+    app.run(host=host, port=port, debug=False)
