@@ -216,12 +216,6 @@ parabolicsar: `//@version=5
   const user = useSelector((state) => state.User);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!user.email) {
-      alert('Please Login or Create an Account.');
-      navigate('/login');
-    }
-  }, [user, navigate]);
 
   return (
        <div>
