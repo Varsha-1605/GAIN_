@@ -132,7 +132,7 @@ function Home() {
     onSubmit: async (values) => {
       try {
         const response = await axios.post(
-          "https://gain-ffmw.onrender.com",
+          "https://gain-model.onrender.com/predict/stock",
           {
             Age_Group: values.age,
             Risk_Level: values.risk,
