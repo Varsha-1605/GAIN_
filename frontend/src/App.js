@@ -30,7 +30,8 @@ const handleSubmit = (e) => {
          <Route path="/news" element={<News />} /> 
         <Route path="/algorithm-trading" element={<AlgorithmTrading />} />
         <Route path="/learn-space" element={<LearnSpace />} /> 
-       
+        <Route path="/fifth-page" element={<Fifthpage />} /> 
+
         {/* Add other routes as necessary */}
       </Routes>
       {/* <Footer /> */}
