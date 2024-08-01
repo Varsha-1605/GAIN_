@@ -54,7 +54,7 @@ const Signup = () => {
     if (!valid) return;
 
     try {
-      const response = await fetch('http://localhost:5001/api/user/signup', {
+      const response = await fetch('https://gain-backend.onrender.com/api/user/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -68,7 +68,7 @@ const Signup = () => {
         dispatch(setUserData(data.user));
 
         // Automatically log in the user
-        const loginResponse = await fetch('http://localhost:5001/api/user/login', {
+        const loginResponse = await fetch('https://gain-backend.onrender.com/api/user/login', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -100,7 +100,7 @@ const Signup = () => {
 
   const handleGoogleSignup = async (response) => {
     try {
-      const res = await fetch('http://localhost:5001/api/user/googleSignup', {
+      const res = await fetch('https://gain-backend.onrender.com/api/user/googleSignup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
