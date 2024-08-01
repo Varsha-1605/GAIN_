@@ -82,7 +82,7 @@ const NavbarComp = () => {
         <ListItemText primary="Learn Space" />
       </ListItem>
       <ListItem button onClick={() => navigate("/fifthpage")}>
-        <ListItemText primary="Fifth Page" />
+        <ListItemText primary="Models" />
       </ListItem>  
       {user.email === null ? (
         <>
