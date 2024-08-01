@@ -9,6 +9,8 @@ import Home from './components/Home/Home';
 import News from './components/News/News';
 import AlgorithmTrading from './components/AlgorithmTrading/AlgorithmTrading';
 import LearnSpace from './components/LearnSpace/LearnSpace';
+import Fifthpage from './components/fifthpage/fifthpage';
+
 import axios from 'axios'
 
 function App() {
