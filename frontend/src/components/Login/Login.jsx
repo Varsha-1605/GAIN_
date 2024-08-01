@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5001/api/user/login', {
+      const response = await fetch('https://gain-backend.onrender.com/api/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ const Login = () => {
 
   const handleGoogleLogin = async (response) => {
     try {
-      const res = await fetch('http://localhost:5001/api/user/googleLogin', { // Adjust endpoint as per your backend
+      const res = await fetch('https://gain-backend.onrender.com/api/user/googleLogin', { // Adjust endpoint as per your backend
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
