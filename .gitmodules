@@ -4,3 +4,6 @@
 [submodule "Financial-Advisor"]
 	path = Financial-Advisor
 	url = https://github.com/Varsha-1605/Financial-Advisor.git
+[submodule "Document-Uploader"]
+	path = Document-Uploader
+	url = https://github.com/Varsha-1605/Document-Uploader.git
