@@ -19,7 +19,7 @@ function Fifthpage() {
             Recommendation System
           </Typography>
           <Button className="btn-17"
-            href="https://youtu.be/PrvRhnJ30Q0"
+            href="https://financial-recommendation-system-tqiwgy3nwg4ogpc3cryftv.streamlit.app/"
             target="_blank"
             variant="" >
             <span className="text-container">
@@ -32,7 +32,7 @@ function Fifthpage() {
             Finance Advisor
           </Typography>
           <Button className="btn-17"
-            href="https://youtu.be/PrvRhnJ30Q0"
+            href="https://financial-advisor-7syx7mb9ngblkvdgfpeqyf.streamlit.app/"
             target="_blank"
             variant="" >
             <span className="text-container">
@@ -45,7 +45,7 @@ function Fifthpage() {
             URLs analyser
           </Typography>
           <Button className="btn-17"
-            href="https://youtu.be/PrvRhnJ30Q0"
+            href="https://research-analyst-xs3odj9sxnnvtxlmeaszq2.streamlit.app/"
             target="_blank"
             variant="" >
             <span className="text-container">
@@ -58,7 +58,7 @@ function Fifthpage() {
             Docs Analyser
           </Typography>
           <Button className="btn-17"
-            href="https://youtu.be/PrvRhnJ30Q0"
+            href="https://document-uploader-w6p9lpxz9mmycjwdx9586m.streamlit.app/"
             target="_blank"
             variant="" >
             <span className="text-container">
