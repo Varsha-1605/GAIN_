@@ -7,3 +7,6 @@
 [submodule "Document-Uploader"]
 	path = Document-Uploader
 	url = https://github.com/Varsha-1605/Document-Uploader.git
+[submodule "Financial-Recommendation-System"]
+	path = Financial-Recommendation-System
+	url = https://github.com/Varsha-1605/Financial-Recommendation-System.git
