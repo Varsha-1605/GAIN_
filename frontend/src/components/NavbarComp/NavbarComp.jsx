@@ -81,6 +81,9 @@ const NavbarComp = () => {
       <ListItem button onClick={() => navigate("/learn-space")}>
         <ListItemText primary="Learn Space" />
       </ListItem>
+      <ListItem button onClick={() => navigate("/fifthpage")}>
+        <ListItemText primary="Fifth Page" />
+      </ListItem>  
       {user.email === null ? (
         <>
           <ListItem button onClick={() => navigate("/login")}>
@@ -128,6 +131,9 @@ const NavbarComp = () => {
             </StyledButton>
             <StyledButton color="inherit" onClick={() => navigate("/learn-space")}>
               Learn Space
+            </StyledButton>
+            <StyledButton color="inherit" onClick={() => navigate("/fifth-page")}>
+              Fifth Page
             </StyledButton>
           </>
         )}
