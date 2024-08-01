@@ -112,7 +112,7 @@ const CompanyStocksPrediction = () => {
   const handleButtonClick = () => {
     if (selectedCompany) {
       axios
-        .post("http://127.0.0.1:5000/predict", {
+        .post("https://gain-model1.onrender.com/predict", {
           company: selectedCompany.name,
         })
         .then((response) => {
