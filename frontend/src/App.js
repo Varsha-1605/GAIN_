@@ -17,7 +17,7 @@ function App() {
   axios.defaults.withCredentials = true
 const handleSubmit = (e) => {
   e.preventDefault();
-  axios.post('https://gain-backend.vercel.app/register')
+  axios.post('https://gain-backend.onrender.com/register')
   .then(result => console.log(result))
   .catch(err => console.log(err))
 }
