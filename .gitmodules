@@ -1,3 +1,6 @@
 [submodule "Research-Analyst"]
 	path = Research-Analyst
 	url = https://github.com/Varsha-1605/Research-Analyst.git
+[submodule "Financial-Advisor"]
+	path = Financial-Advisor
+	url = https://github.com/Varsha-1605/Financial-Advisor.git
