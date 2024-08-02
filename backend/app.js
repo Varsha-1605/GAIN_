@@ -16,19 +16,13 @@ const port = process.env.PORT || 5001;
 
 console.log("App is starting...");
 
-// CORS Configuration
 app.use(cors({
   origin: "https://gain-pi.vercel.app",
   methods: ["POST", "GET"],
   credentials: true
 }));
-
 app.use(express.json());
-app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: true
-}));
+app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -50,7 +44,7 @@ const start = async () => {
       console.log(`Server is running on port ${port}...`);
     });
   } catch (error) {
-    console.error("Error starting server:", error);
+    console.log(error);
   }
 };
 
