@@ -111,11 +111,11 @@ const CompanyStocksPrediction = () => {
 
   const handleButtonClick = () => {
     if (selectedCompany) {
-      axios
-        .post("https://gain-model1.onrender.com/predict", {
-          company: selectedCompany.name,
-          { withCredentials: true }
-        })
+     axios.post("https://gain-model1.onrender.com/predict", {
+  company: selectedCompany.name
+}, {
+  withCredentials: true
+})
         .then((response) => {
           console.log(response.data);
           setPrediction(response.data); 
