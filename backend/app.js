@@ -15,12 +15,13 @@ const app = express();
 const port = process.env.PORT || 5001;
 
 console.log("App is starting...");
-
-app.use(cors({
-  origin: "https://gain-pi.vercel.app",
-  methods: ["POST", "GET"],
+const corsOptions = {
+  origin: "https://gain-pi.vercel.app",  // Your frontend domain
+  methods: ["GET", "POST"],
   credentials: true
-}));
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
