@@ -114,6 +114,7 @@ const CompanyStocksPrediction = () => {
       axios
         .post("https://gain-model1.onrender.com/predict", {
           company: selectedCompany.name,
+          { withCredentials: true }
         })
         .then((response) => {
           console.log(response.data);
