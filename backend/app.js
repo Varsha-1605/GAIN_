@@ -16,25 +16,26 @@ const port = process.env.PORT || 5001;
 
 console.log("App is starting...");
 
-app.use(cors(
-  {
-    origin: ["https://gain-pi.vercel.app"],
-    methods: ["POST","GET"],
-    credentials: true
-  }
-));
+// CORS Configuration
+app.use(cors({
+  origin: "https://gain-pi.vercel.app",
+  methods: ["POST", "GET"],
+  credentials: true
+}));
+
 app.use(express.json());
-app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }));
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
 app.use(passport.initialize());
 app.use(passport.session());
-
 
 // Add the new root route here
 app.get('/', (req, res) => {
   res.send('Welcome to the API');
 });
-
-
 
 // For User Routes
 app.use(UserRoute, userRoutes);
@@ -49,7 +50,7 @@ const start = async () => {
       console.log(`Server is running on port ${port}...`);
     });
   } catch (error) {
-    console.log(error);
+    console.error("Error starting server:", error);
   }
 };
 
