@@ -18,7 +18,7 @@ console.log("App is starting...");
 
 app.use(cors(
   {
-    origin: ["https://gain-pi.vercel.app/"],
+    origin: ["https://gain-pi.vercel.app"],
     methods: ["POST","GET"],
     credentials: true
   }
