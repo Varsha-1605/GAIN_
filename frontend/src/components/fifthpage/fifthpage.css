@@ -145,3 +145,13 @@ li {
   align-items: center;
   margin-bottom:2rem;
 }
+
+.error{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom:2rem;
+  margin-top:2rem;
+  text-align: center;
+}
