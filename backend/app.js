@@ -6,6 +6,8 @@ const cors = require("cors");
 const { UserRoute } = require("./Constant");
 const connectToDatabase = require("./src/DB/Connect");
 
+const allowedOrigins = ['https://gain-pi.vercel.app'];
+
 // Importing Routes
 const userRoutes = require("./src/routes/userRoutes");
 const userDataRoutes = require("./src/routes/userDataRoutes");
