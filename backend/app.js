@@ -18,10 +18,14 @@ console.log("App is starting...");
 const corsOptions = {
   origin: "https://gain-pi.vercel.app",  // Your frontend domain
   methods: ["GET", "POST"],
-  credentials: true
+  credentials: true  // This allows credentials to be included in requests
 };
 
+// Apply CORS middleware
 app.use(cors(corsOptions));
+
+// Handle preflight requests
+app.options('*', cors(corsOptions));
 app.use(express.json());
 app.use(session({ secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: true }));
 app.use(passport.initialize());
