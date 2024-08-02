@@ -67,6 +67,21 @@ function Fifthpage() {
           </Button>
         </Box>
       </Box>
+
+      <Box className="error" >
+          <Typography variant="h5" gutterBottom>
+            There might be some problems with the working of the deployed model due to version mismatch and api key error.
+            <Typography variant="h5" gutterBottom></Typography>
+            We request you to have a look at the demo video submitted and the demo link below for all the ml models where everything works perfectly          </Typography>
+          <Button className="btn-17"
+            href="https://drive.google.com/drive/folders/1QUEop9k-hbBSwGOxhsPJ62iNG9LN9aYr?usp=drive_link"
+            target="_blank"
+            variant="" >
+            <span className="text-container">
+              <span className="text">Please have a look ^ ^ </span>
+            </span>
+          </Button>
+        </Box>
     </Container>
   );
 }
