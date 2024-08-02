@@ -119,6 +119,7 @@ const CompanyStocksPrediction = () => {
         .then((response) => {
           console.log(response.data);
           setPrediction(response.data); 
+          console.log(prediction.prediction)
           setOpen(true); 
         })
         .catch((error) => {
@@ -172,7 +173,7 @@ const CompanyStocksPrediction = () => {
           </IconButton>
         </DialogTitle>
         <DialogContent>
-          {console.log(prediction)}
+         
           {prediction.prediction === "Up" ? (
             <>
               The stock for <strong>{prediction.company}</strong> is predicted
