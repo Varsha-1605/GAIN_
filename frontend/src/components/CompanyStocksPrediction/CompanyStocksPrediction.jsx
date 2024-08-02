@@ -124,6 +124,7 @@ const CompanyStocksPrediction = () => {
         })
         .catch((error) => {
           console.error(error); 
+          alert(error.message)
         });
       setSelectedCompany(null); 
     } else {
