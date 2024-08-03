@@ -21,7 +21,7 @@ load_dotenv()
 np.seterr(invalid='ignore')  # Ignore invalid (NaN) values
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True)
 
 # Load and prepare the data
 df = pd.read_csv('complete_data.csv')
