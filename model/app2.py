@@ -17,7 +17,7 @@ except Exception as e:
     print(f"Error loading model: {str(e)}")
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True)
 
 def get_investment_advice(model, user_inputs):
     try:
