@@ -14,7 +14,6 @@ import axios from "axios";
 
 const companies = [
     { code: "AAPL", name: "Apple Inc." },
-  { code: "MSFT", name: "Microsoft Corporation" },
   { code: "GOOGL", name: "Alphabet Inc. (Class A)" },
   { code: "AMZN", name: "Amazon.com Inc." },
   { code: "META", name: "Meta Platforms, Inc. (formerly Facebook, Inc.)" },
