@@ -12,21 +12,9 @@ function Fifthpage() {
   const navigate = useNavigate();
 
   return (
-    <Container>
+    <Container  style={{color: 'white', minHeight: '100vh' }}>
       <Box className="container-grid">
-        <Box className="grid-item">
-          <Typography variant="h4" gutterBottom>
-            Recommendation System
-          </Typography>
-          <Button className="btn-17"
-            href="https://financial-recommendation-system-tqiwgy3nwg4ogpc3cryftv.streamlit.app/"
-            target="_blank"
-            variant="" >
-            <span className="text-container">
-              <span className="text">Try Now -&gt;</span>
-            </span>
-          </Button>
-        </Box>
+        
         <Box className="grid-item">
           <Typography variant="h4" gutterBottom>
             Finance Advisor
@@ -53,7 +41,7 @@ function Fifthpage() {
             </span>
           </Button>
         </Box>
-        <Box className="grid-item">
+        <Box className="grid-item center-btn">
           <Typography variant="h4" gutterBottom>
             Docs Analyser
           </Typography>
@@ -66,13 +54,15 @@ function Fifthpage() {
             </span>
           </Button>
         </Box>
+
+        
+
       </Box>
 
       <Box className="error" >
           <Typography variant="h5" gutterBottom>
-            There might be some problems with the working of the deployed model due to version mismatch and api key error.
-            <Typography variant="h5" gutterBottom></Typography>
-            We request you to have a look at the demo video submitted and the demo link below for all the ml models where everything works perfectly          </Typography>
+            Check out this link to see the working of models, responses and working of other underdevelopment fuctionalities.
+            </Typography>
           <Button className="btn-17"
             href="https://drive.google.com/drive/folders/1QUEop9k-hbBSwGOxhsPJ62iNG9LN9aYr?usp=drive_link"
             target="_blank"
