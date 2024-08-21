@@ -29,7 +29,8 @@
     "redux-persist": "^6.0.0",
     "web-vitals": "^2.1.4",
     "yahoo-finance-api": "^0.2.1",
-    "yfinance": "^0.0.6"
+    "yfinance": "^0.0.6",
+    "react-helmet": "^6.1.0"  // Added react-helmet dependency
   },
   "scripts": {
     "start": "react-scripts start",
