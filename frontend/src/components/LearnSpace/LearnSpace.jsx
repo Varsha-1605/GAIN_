@@ -1,15 +1,20 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import "./learnspace.css";
 import { Box, Button, Typography, Container } from '@mui/material';
+import { useForm } from "react-cool-form";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
 
 function LearnSpace() {
   const user = useSelector((state) => state.User);
   const navigate = useNavigate();
 
+  
 
   return (
-    <Container>
+    <Container  style={{color: 'white', minHeight: '100vh' }}>
       
       <Box sx={{ textAlign: 'center', marginTop: 8 }}>
         <Typography variant="h4" gutterBottom>
@@ -17,22 +22,26 @@ function LearnSpace() {
         </Typography>
       </Box>
       <Box sx={{ textAlign: 'center', marginTop: 4 }}>
-        <Button
-          href="https://youtu.be/PrvRhnJ30Q0"
-          target="_blank"
-          variant="contained"
-          sx={{
-            backgroundColor:'black',
-            borderRadius: 2,
-            width: '20%',
-            fontSize: '1.5em',
-            textAlign: 'center',
-            marginLeft: 'auto',
-            marginRight: 'auto',
-          }}
-        >
-          Paper Trading Account
-        </Button>
+        
+
+        <Button className="btn-17"
+            href="https://youtu.be/PrvRhnJ30Q0"
+            target="_blank"
+            sx={{
+              backgroundColor:'black',
+              width: '20%',
+              fontSize: '1.5em',
+              textAlign: 'center',
+              marginLeft: 'auto',
+              marginRight: 'auto',
+              
+            }}
+            variant="" >
+            <span className="text-container">
+              <span className="text">Paper Trading Account</span>
+            </span>
+          </Button>
+
       </Box>
       <Box sx={{ width: '80%', margin: 'auto', marginTop: 4 }}>
         <Box sx={{ textAlign: 'center', marginTop: 4 }}>
@@ -94,6 +103,7 @@ function LearnSpace() {
             marginLeft: 'auto',
             marginRight: 'auto',
             padding: '10px 20px',
+            color: 'white', 
           }}
         >
           <img
