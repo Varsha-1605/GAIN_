@@ -1,5 +1,20 @@
 import React, { useState } from "react";
 import { useForm } from "react-cool-form";
+import { Card, CardActionArea, CardContent, CardMedia,Grid, MenuItem } from '@mui/material';
+import StockChart from '../StockChart/StockChart.jsx';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Image1 from './image/chatbot2.jpg';
+import Image2 from './image/doc_uploader.jpg';
+import Image3 from './image/financial_advisor.jpg';
+import Image4 from './image/community_forum.jpg';
+import Image5 from './image/eugene-C0oMwg0gKp8-unsplash.jpg';
+import Image6 from './image/vinayak-sharma-D4H4WYBl1Rs-unsplash.jpg';
+import Image7 from './image/vinayak-sharma-D4H4WYBl1Rs-unsplash.jpg';
+import Image8 from './image/julien-riedel-alGtgU3MQu4-unsplash.jpg';
+import { Helmet } from 'react-helmet';
+import VideoSource from './image/2792370-hd_1920_1080_30fps.mp4';
+import { Link } from 'react-router-dom';
 import {
   Container,
   Typography,
@@ -25,6 +40,19 @@ import {
 import CompanyStocksPrediction from "../CompanyStocksPrediction/CompanyStocksPrediction";
 import "./Home.css";
 import axios from "axios";
+
+const stockSymbols = [
+  { symbol: 'AAPL', name: 'Apple Inc.' },
+  { symbol: 'AMZN', name: 'Amazon.com Inc.' },
+  { symbol: 'GOOGL', name: 'Google Inc.' },
+  { symbol: 'MSFT', name: 'Microsoft Corporation' },
+  { symbol: 'TSLA', name: 'Tesla, Inc.' },
+  { symbol: 'RELI', name: 'Reliance Industries Limited' },
+  { symbol: 'TCS', name: 'Tata Consultancy Services' },
+  { symbol: 'INFY', name: 'Infosys Limited' },
+  { symbol: 'HDB', name: 'HDFC Bank Limited' },
+  { symbol: 'WIT', name: 'Wipro Limited' },
+];
 
 const companies = [
   { code: "AAPL", name: "Apple Inc." },
@@ -115,6 +143,8 @@ const companies = [
 ];
 
 function Home() {
+  const [news, setNews] = useState([]);
+  const [selectedStock, setSelectedStock] = useState(stockSymbols[0].symbol);
   const [open, setOpen] = useState(false);
   const [investmentAdvice, setInvestmentAdvice] = useState("");
   const { form, use, reset } = useForm({
@@ -132,7 +162,7 @@ function Home() {
     onSubmit: async (values) => {
       try {
         const response = await axios.post(
-          "https://gain-model.onrender.com/predict/stock",
+          "http://127.0.0.1:5002/predict/stock",
           {
             Age_Group: values.age,
             Risk_Level: values.risk,
@@ -177,179 +207,142 @@ function Home() {
 
 
   return (
-    <Container>
-      <div className="grid-container">
-        <div className="doodle-left">
-          <CoffeeDoodle accent="#ff6347" ink="#1876d1" />
-          <LovingDoodle accent="#ff0083" ink="#1876d1" />
-          <DoggieDoodle accent="#ff4500" ink="#1876d1" />
-        </div>
-        <div className="form-container">
-          <CompanyStocksPrediction />
-          <Typography variant="h4" gutterBottom sx={{ marginTop: 5 }}>
-            Investment Planner
-          </Typography>
+    <Container style={{ margin: 0, padding: 0,color: 'white', minHeight: '100vh' }}>
+      
 
-          <form ref={form} noValidate>
-            <FormControl
-              fullWidth
-              margin="normal"
-              variant="filled"
-              error={!!errors.age}
-            >
-              <InputLabel>Your Age*</InputLabel>
-              <Select
-                name="age"
-                required
-                native
-                value={form.age}
-                onChange={form.handleChange}
-              >
-                <option aria-label="None" value="" />
-                {ageOptions.map((option, index) => (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </Select>
-              <FormHelperText>{errors.age}</FormHelperText>
-            </FormControl>
 
-            <FormControl
-              fullWidth
-              margin="normal"
-              variant="filled"
-              error={!!errors.risk}
-            >
-              <InputLabel>Risk Involvement*</InputLabel>
-              <Select
-                name="risk"
-                required
-                native
-                value={form.risk}
-                onChange={form.handleChange}
-              >
-                <option aria-label="None" value="" />
-                {riskOptions.map((option, index) => (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </Select>
-              <FormHelperText>{errors.risk}</FormHelperText>
-            </FormControl>
-
-            <FormControl
-              fullWidth
-              margin="normal"
-              variant="filled"
-              error={!!errors.amount}
-            >
-              <InputLabel>Amount to Invest*</InputLabel>
-              <Select
-                name="amount"
-                required
-                native
-                value={form.amount}
-                onChange={form.handleChange}
-              >
-                <option aria-label="None" value="" />
-                {amountOptions.map((option, index) => (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </Select>
-              <FormHelperText>{errors.amount}</FormHelperText>
-            </FormControl>
-
-            <FormControl
-              fullWidth
-              margin="normal"
-              variant="filled"
-              error={!!errors.term}
-            >
-              <InputLabel>Term of Investment*</InputLabel>
-              <Select
-                name="term"
-                required
-                native
-                value={form.term}
-                onChange={form.handleChange}
-              >
-                <option aria-label="None" value="" />
-                {termOptions.map((option, index) => (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </Select>
-              <FormHelperText>{errors.term}</FormHelperText>
-            </FormControl>
-
-            <FormControl
-              fullWidth
-              margin="normal"
-              variant="filled"
-              error={!!errors.diversity}
-            >
-              <InputLabel>How Diverse*</InputLabel>
-              <Select
-                name="diversity"
-                required
-                native
-                value={form.diversity}
-                onChange={form.handleChange}
-              >
-                <option aria-label="None" value="" />
-                {diversityOptions.map((option, index) => (
-                  <option key={index} value={option}>
-                    {option}
-                  </option>
-                ))}
-              </Select>
-              <FormHelperText>{errors.diversity}</FormHelperText>
-            </FormControl>
-
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              style={{ marginTop: "20px" }}
-            >
-              Suggested Investments
-            </Button>
-          </form>
-        </div>
-        <div className="doodle-right">
-          <MeditatingDoodle accent="#008cff" ink="#1876d1" />
-          <JumpingDoodle accent="#ffa500" ink="#1876d1" />
-          <ReadingDoodle accent="#8a2be2" ink="#1876d1" />
+      <div className="slider-frame">
+        <div className="slide-images imagetrack">
+          <div className="img-container">
+            <img className="image" src={Image1} alt="Slide 1" />
+          </div>
+          <div className="img-container">
+            <img className="image" src={Image2} alt="Slide 2" />
+          </div>
+          <div className="img-container">
+            <img className="image" src={Image3} alt="Slide 3" />
+          </div>
+          <div className="img-container">
+            <img className="image" src={Image4} alt="Slide 4" />
+          </div>
+          <div className="img-container">
+            <img className="image" src={Image5} alt="Slide 5" />
+          </div>
+          <div className="img-container">
+            <img className="image" src={Image6} alt="Slide 6" />
+          </div>
+          <div className="img-container">
+            <img className="image" src={Image7} alt="Slide 7" />
+          </div>
         </div>
       </div>
-      <Dialog
-          open={open}
-          onClose={() => setOpen(false)}
-          aria-labelledby="investment-advice-title"
-          maxWidth="sm"
-          fullWidth
+
+      <div className="box">
+        <p> This is the home page of our application and should explain how our model should be working and the workflow of our application and we have multiple functionalities around it.</p>
+        <p> The 3 main models of our website is:</p>
+        <p>  Financial Advisor : which can give personalized suggestions to even a biggener.</p>
+        <p>URLs Analyzer : which works on a RAG + LLM model which increases the efficiency of the model by atleast 80% which can retrieve multiple chunks of news data and and answer any questions based on them.</p>
+        <p>Docs Analyzer : which also works on a RAG + LLM model which increases the efficiency of the model by atleast 80% which can summarize financial reports for you and also tell if it is good or bad for the company</p>
+
+
+      </div>
+
+      <div
+        style={{
+          position: 'relative',
+          marginBottom: 0,
+          paddingBottom: 0,
+          minHeight: '100vh',
+          minWidth: '98vw',
+          maxWidth: '100vw',
+          overflow: 'hidden',
+          display: 'flex',             // Added Flexbox
+          alignItems: 'center',        // Vertically centers the content
+          justifyContent: 'center',    // Horizontally centers the content
+        }}
+      >
+        <video
+          autoPlay
+          loop
+          muted
+          style={{
+            position: 'absolute',       // Positioned absolutely to cover the parent div
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            
+          }}
         >
-          <DialogTitle id="investment-advice-title">
-            Investment Advice
-            <IconButton
-              aria-label="close"
-              onClick={() => setOpen(false)}
-              style={{ position: "absolute", right: 8, top: 8 }}
+          <source src={VideoSource} type="video/mp4" />
+        </video>
+        <div class="button-container custom-shape">
+    <Button 
+        component={Link}
+        className="centered-button brutalist-button openai button-1 border-span"
+        variant="containPed"
+        color="primary"
+        size="large"
+        to="/login"
+        target="_blank"
+        rel="noopener"
+        style={{
+            fontSize: '0.8rem',
+        }}
+    >
+      
+        <div class="openai-logo">
+            <svg
+                class="openai-icon"
+                viewBox="-13 2 50 20"
+                xmlns="http://www.w3.org/2000/svg"
             >
-              <CloseIcon />
-            </IconButton>
-          </DialogTitle>
-          <DialogContent dividers style={{ textAlign: "center" }}>
-            <Typography gutterBottom>The <b>Company</b> you should <b>INVEST</b> in is: <u style={{color:"#1876D1"}}><b>{companies.find((company) => company.code === investmentAdvice)
-            ?.name || investmentAdvice}</b></u></Typography>
-          </DialogContent>
-          
-        </Dialog>
+                <path
+                    d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.8956zm16.0993 3.8558L12.5907 8.3829 14.6108 7.2144a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.3927-.6813zm2.0107-3.0231l-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654l2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"
+                    fill="#10A37F"
+                ></path>
+            </svg>
+        </div>  
+        <div class="button-text">
+            <span>Powered By</span>
+            <span>OpenAI</span>
+        </div>
+    </Button>
+</div>
+
+      </div>
+
+
+
+        <Typography variant="h4" align="center" gutterBottom sx={{ mt: 5,mb:3 }}>
+            Stock Charts
+          </Typography>
+
+          <FormControl sx={{ mb: 2, minWidth: 200, color: 'white' }}>
+              <InputLabel sx={{ color: 'white'}}>Company</InputLabel>
+              <Select
+                value={selectedStock}
+                onChange={(e) => setSelectedStock(e.target.value)}
+                label="Company"
+                sx={{
+                  color: 'white',
+                  border: '1px solid white', 
+                  marginTop: '10px'
+                }}
+              >
+                 {stockSymbols.map((stock) => (
+              <MenuItem key={stock.symbol} value={stock.symbol} >
+                {stock.name}
+              </MenuItem>
+                ))}
+              </Select>
+            </FormControl>
+
+
+        <StockChart symbol={selectedStock} />
+
+        
     </Container>
   );
 }
