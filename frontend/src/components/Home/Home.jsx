@@ -11,7 +11,7 @@ import Image4 from './image/community_forum.jpg';
 import Image5 from './image/chatbot2.jpg';
 import Image6 from './image/doc_uploader.jpg';
 import Image7 from './image/financial_advisor.jpg';
-import Image8 from '.'./image/community_forum.jpg';
+import Image8 from './image/community_forum.jpg';
 import { Helmet } from 'react-helmet';
 import VideoSource from './image/2792370-hd_1920_1080_30fps.mp4';
 import { Link } from 'react-router-dom';
