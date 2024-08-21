@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
- import './App.css'; 
+import './App.css'; 
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Box, Button, Typography, Container } from '@mui/material';
@@ -216,10 +216,21 @@ parabolicsar: `//@version=5
   const user = useSelector((state) => state.User);
   const navigate = useNavigate();
 
+  
 
   return (
        <div>
-    
+    <Container  style={{ backgroundColor: 'black', color: 'white',  }}>
+      {user.email && (
+        <Box mt={4}>
+          <Typography variant="h4" gutterBottom>
+            Welcome, saahilahmad2003@gmail.com!
+          </Typography>
+          <Typography variant="h5">Algorithm Trading</Typography>
+        </Box>
+      )}
+    </Container>
+
  
       <div className="header">
         <h1>Algorithms for Trading</h1>
@@ -229,12 +240,7 @@ parabolicsar: `//@version=5
         <h2>Moving Average Crossover Strategy</h2>
         <CopyToClipboard text={codes.movingAverageCrossover}>
           <button className="code-button" title="Copy Code">
-            <svg xmlns="http://www.w3.org/2000/svg" className="gfg-icon" width="20" height="20" viewBox="0 0 24 24" strokeWidth="2.0" stroke="#2c3b8f" fill="none" strokeLinecap="round" strokeLinejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <rect x="5" y="5" width="14" height="14" rx="2" />
-              <line x1="12" y1="8" x2="12" y2="16" />
-              <line x1="8" y1="12" x2="16" y2="12" />
-            </svg>
+          <svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg>
           </button>
         </CopyToClipboard>
         <pre>{codes.movingAverageCrossover}</pre>
@@ -244,12 +250,7 @@ parabolicsar: `//@version=5
         <h2>Reversal Indicator Strategy</h2>
         <CopyToClipboard text={codes.reversalIndicator}>
           <button className="code-button" title="Copy Code">
-            <svg xmlns="http://www.w3.org/2000/svg" className="gfg-icon" width="20" height="20" viewBox="0 0 24 24" strokeWidth="2.0" stroke="#2c3b8f" fill="none" strokeLinecap="round" strokeLinejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <rect x="5" y="5" width="14" height="14" rx="2" />
-              <line x1="12" y1="8" x2="12" y2="16" />
-              <line x1="8" y1="12" x2="16" y2="12" />
-            </svg>
+          <svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg>
           </button>
         </CopyToClipboard>
         <pre>{codes.reversalIndicator}</pre>
@@ -259,12 +260,7 @@ parabolicsar: `//@version=5
         <h2>Channel Break Out Strategy</h2>
         <CopyToClipboard text={codes.channelbreakout}>
           <button className="code-button" title="Copy Code">
-            <svg xmlns="http://www.w3.org/2000/svg" className="gfg-icon" width="20" height="20" viewBox="0 0 24 24" strokeWidth="2.0" stroke="#2c3b8f" fill="none" strokeLinecap="round" strokeLinejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <rect x="5" y="5" width="14" height="14" rx="2" />
-              <line x1="12" y1="8" x2="12" y2="16" />
-              <line x1="8" y1="12" x2="16" y2="12" />
-            </svg>
+          <svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg>
           </button>
         </CopyToClipboard>
         <pre>{codes.channelbreakout}</pre>
@@ -274,12 +270,7 @@ parabolicsar: `//@version=5
         <h2>Parabolic SAR Strategy</h2>
         <CopyToClipboard text={codes.parabolicsar}>
           <button className="code-button" title="Copy Code">
-            <svg xmlns="http://www.w3.org/2000/svg" className="gfg-icon" width="20" height="20" viewBox="0 0 24 24" strokeWidth="2.0" stroke="#2c3b8f" fill="none" strokeLinecap="round" strokeLinejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <rect x="5" y="5" width="14" height="14" rx="2" />
-              <line x1="12" y1="8" x2="12" y2="16" />
-              <line x1="8" y1="12" x2="16" y2="12" />
-            </svg>
+          <svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg>
           </button>
         </CopyToClipboard>
         <pre>{codes.parabolicsar}</pre>
@@ -289,19 +280,21 @@ parabolicsar: `//@version=5
         <h2>RSI Strategy</h2>
         <CopyToClipboard text={codes.rsistrategy}>
           <button className="code-button" title="Copy Code">
-            <svg xmlns="http://www.w3.org/2000/svg" className="gfg-icon" width="20" height="20" viewBox="0 0 24 24" strokeWidth="2.0" stroke="#2c3b8f" fill="none" strokeLinecap="round" strokeLinejoin="round">
-              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-              <rect x="5" y="5" width="14" height="14" rx="2" />
-              <line x1="12" y1="8" x2="12" y2="16" />
-              <line x1="8" y1="12" x2="16" y2="12" />
-            </svg>
+           <svg  xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="black"><path d="M360-240q-33 0-56.5-23.5T280-320v-480q0-33 23.5-56.5T360-880h360q33 0 56.5 23.5T800-800v480q0 33-23.5 56.5T720-240H360Zm0-80h360v-480H360v480ZM200-80q-33 0-56.5-23.5T120-160v-560h80v560h440v80H200Zm160-240v-480 480Z"/></svg>
           </button>
         </CopyToClipboard>
         <pre>{codes.rsistrategy}</pre>
       </div>
 
-      <Box sx={{ textAlign: 'center', marginTop: 4 }}>
-        <Typography paragraph>
+      <Box sx={{
+      borderRadius: 2,
+      textAlign: 'center',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+      padding: '10px 20px',
+      color: 'white', // Change text color to white
+    }}>
+        <Typography paragraph >
         You can use the Pine connector service to connect your pine editor code to your meta trading account and convert your alerts to actual orders.
         </Typography>
         <Button
