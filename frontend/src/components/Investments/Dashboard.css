@@ -1,0 +1,93 @@
+body {
+    background-color: black;
+    color: #ffffff;
+  }
+  
+  .dashboard {
+    padding: 20px;
+  }
+  
+  .charts-container {
+    display: flex;
+    height: 50vh;
+    margin-bottom: 20px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+  }
+  
+  .chart-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .chart-divider {
+    width: 1px;
+    background-color: #444;
+  }
+  
+  .investment-breakdown {
+    margin-top: 20px;
+  }
+  
+  .investment-breakdown h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+  
+  .investment-breakdown ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .investment-breakdown li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e1e1e;
+  }
+  
+  .company-name {
+    font-weight: bold;
+    flex: 2;
+    color: #ffffff;
+  }
+  
+  .investment-amount {
+    flex: 1;
+    text-align: right;
+    color: #4CAF50;
+  }
+  
+  .profit-loss {
+    flex: 1;
+    text-align: right;
+    color: #FFA726;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
