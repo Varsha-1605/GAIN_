@@ -133,10 +133,12 @@ li {
 }
 
 .container-grid {
-  display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   margin-top: 6rem;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
 }
 
 .grid-item {
